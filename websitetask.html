@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .parent {
+            display: grid;
+
+            grid-template-columns: 260px 1fr 350px;
+
+            grid-template-rows: 125px 830px 100px;
+
+            grid-template-areas:
+                "header header header"
+                "left content right"
+                "footer footer footer";
+
+            gap: 10px;
+
+            width: 98%;
+            margin: 8px auto;
+        }
+        .a {
+            grid-area: header;
+
+            background-color: #1761b9;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 35px;
+
+            border-radius: 8px;
+        }
+
+        .a h1 {
+            font-size: 42px;
+        }
+
+        .a nav {
+            display: flex;
+            gap: 45px;
+        }
+
+        .a nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .b {
+            grid-area: left;
+
+            background-color: #e9e6ff;
+
+            padding: 35px 20px;
+
+            border-radius: 8px;
+        }
+
+        .b h2 {
+            color: #29246f;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .b a {
+            display: block;
+
+            color: #29246f;
+            text-decoration: none;
+
+            font-size: 25px;
+
+            padding: 14px 12px;
+
+            margin-bottom: 8px;
+
+            border-radius: 10px;
+        }
+
+        .b a:hover {
+            background-color: #dcd7fa;
+        }
+
+        .c {
+            grid-area: content;
+
+            background-color: #f4fbff;
+
+            padding: 45px 38px;
+
+            border-radius: 8px;
+        }
+
+        .c h2 {
+            color: #063d63;
+
+            font-size: 40px;
+
+            margin-bottom: 35px;
+        }
+
+        .c img {
+            width: 100%;
+            height: 325px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+        }
+
+        .c p {
+            font-size: 25px;
+
+            line-height: 1.55;
+
+            margin-top: 30px;
+
+            color: #263849;
+        }
+
+        .c button {
+            background-color: #19a66a;
+
+            color: white;
+
+            border: none;
+
+            padding: 18px 32px;
+
+            font-size: 23px;
+
+            border-radius: 8px;
+
+            margin-top: 30px;
+
+            cursor: pointer;
+        }
+
+        .f {
+            grid-area: right;
+
+            background-color: #fff5df;
+
+            padding: 45px 32px;
+
+            border-radius: 8px;
+        }
+
+        .f h2 {
+            font-size: 34px;
+
+            margin-bottom: 25px;
+        }
+
+        .f a {
+            display: block;
+
+            color: #205487;
+
+            text-decoration: none;
+
+            font-size: 24px;
+
+            margin-bottom: 27px;
+        }
+
+        .f h3 {
+            font-size: 32px;
+
+            margin-top: 65px;
+
+            margin-bottom: 25px;
+        }
+
+        .f p {
+            font-size: 21px;
+
+            margin-bottom: 25px;
+        }
+
+        .d {
+            grid-area: footer;
+
+            background-color: #209b8f;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 22px;
+
+            border-radius: 8px;
+        }
+
+        @media(max-width: 900px) {
+
+            .parent {
+                grid-template-columns: 1fr;
+
+                grid-template-rows: auto;
+
+                grid-template-areas:
+                    "header"
+                    "left"
+                    "content"
+                    "right"
+                    "footer";
+            }
+
+            .a {
+                flex-direction: column;
+
+                justify-content: center;
+
+                gap: 20px;
+
+                padding: 25px;
+            }
+
+            .a nav {
+                gap: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="parent">
+
+        <header class="a">
+
+            <h1>My Website</h1>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </header>
+
+        <aside class="b">
+
+            <h2>Menu</h2>
+
+            <a href="#"> Home</a>
+
+            <a href="#"> About</a>
+
+            <a href="#"> Services</a>
+
+            <a href="#"> Blog</a>
+
+            <a href="#"> Contact</a>
+
+        </aside>
+
+
+        <main class="c">
+
+            <h2>Welcome to Our Website</h2>
+
+            <img
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80"
+                alt="Mountain Lake">
+
+            <p>
+                We are a team of passionate developers
+                who build modern and user-friendly websites.
+                Our goal is to provide the best services and
+                create amazing digital experiences for our clients.
+            </p>
+
+            <button>Learn More</button>
+
+        </main>
+
+
+        <aside class="f">
+
+            <h2>Quick Links</h2>
+
+            <a href="#"> Documentation</a>
+
+            <a href="#"> Support</a>
+
+            <a href="#"> FAQs</a>
+
+            <a href="#"> Privacy Policy</a>
+
+
+            <h3>Contact Us</h3>
+
+            <p> +91 98765 43210</p>
+
+            <p> info@mywebsite.com</p>
+
+            <p> Hyderabad, India</p>
+
+        </aside>
+
+        <footer class="d">
+
+            © 2025 My Website. All rights reserved.
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
